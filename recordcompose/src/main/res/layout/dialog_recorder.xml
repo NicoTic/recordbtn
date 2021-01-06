@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@drawable/dialog_content_record_bg">
+
+
+    <ImageView
+        android:id="@+id/dialog_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/tb_voice1"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/recorder_dialogtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/move_up_to_cancel"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

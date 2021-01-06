@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">android_recorder</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="default_file_name">MyRecording</string>
+    <string name="toast_recording_finish">Recording saved to</string>
+
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="button_pushtotalk">按住录音</string>
+    <string name="Recording_without_permission">无录音权限</string>
+    <string name="The_recording_time_is_too_short">录音时间太短</string>
+    <string name="move_up_to_cancel">手指上滑，取消录音</string>
+    <string name="recording_description">松开结束，手指上滑取消发送</string>
+    <string name="release_to_cancel">松开手指，取消录音</string>
+    <string name="str_recorder_recording">松开结束</string>
+</resources>

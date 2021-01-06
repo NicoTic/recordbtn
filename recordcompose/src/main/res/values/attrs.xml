@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecorderPlayCompose">
+        <attr name="maxRecordsCount" format="integer" />
+        <attr name="maxRecordTimes" format="integer" />
+    </declare-styleable>
+</resources>
