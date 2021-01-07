@@ -2,18 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="15dp"
-    android:background="@drawable/dialog_content_record_bg">
+    android:padding="15dp">
 
 
-    <ImageView
+    <com.cmnit.recordcompose.WaveView
         android:id="@+id/dialog_voice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/tb_voice1"
-        android:visibility="visible"/>
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        app:baselineColor="#0000"
+        app:space="4dp"
+        app:waveColor="#d0021b"
+        app:waveStokeWidth="3dp"/>
 
     <TextView
         android:id="@+id/recorder_dialogtext"

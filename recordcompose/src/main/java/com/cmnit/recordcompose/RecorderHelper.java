@@ -24,7 +24,7 @@ public class RecorderHelper {
     String PATH ;
     String DIR ;
     int MAX_RECORDER_TIME = 0;
-    private int BASE = 1;
+    private double BASE = 0.1d;
     private int SPACE = 160;// 间隔取样时间
     private static volatile float mTime = 0;
     private MediaRecorder mMediaRecorder;

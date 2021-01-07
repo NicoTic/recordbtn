@@ -3,9 +3,11 @@ package com.cmnit.recordcompose;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +29,7 @@ public class DialogManager {
      */
 
     private Dialog mDialog;
-    private ImageView mVoice;
+    private WaveView mVoice;
 
     private TextView mLable;
 
@@ -51,13 +53,15 @@ public class DialogManager {
         mVoice = mDialog.findViewById(R.id.dialog_voice);
         mLable = mDialog.findViewById(R.id.recorder_dialogtext);
 
-//        Window dialogWindow = mDialog.getWindow();
+        Window dialogWindow = mDialog.getWindow();
+        dialogWindow.setGravity(Gravity.BOTTOM);
 //        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
 //        int width = ScreenUtil.getScreenWidth(mContext) / 2;
 //        lp.width = width; // 宽度
 //        lp.height = width; // 高度
 //        dialogWindow.setAttributes(lp);
         mDialog.setCancelable(false);
+        mDialog.setCanceledOnTouchOutside(false);
         mDialog.show();
     }
 
@@ -70,7 +74,6 @@ public class DialogManager {
             mLable.setVisibility(View.VISIBLE);
             mLable.setText(R.string.move_up_to_cancel);
             mLable.setBackgroundColor(Color.TRANSPARENT);
-//            mLable.setText(res);
         }
     }
 
@@ -85,17 +88,6 @@ public class DialogManager {
         }
     }
 
-    // 时间过短
-    public void tooShort() {
-        if (mDialog != null && mDialog.isShowing()) {
-            mVoice.setVisibility(View.GONE);
-            mLable.setVisibility(View.VISIBLE);
-
-            mLable.setText(R.string.The_recording_time_is_too_short);
-        }
-
-    }
-
     // 隐藏dialog
     public void dismissDialog() {
         if (mDialog != null && mDialog.isShowing()) {
@@ -105,32 +97,11 @@ public class DialogManager {
 
     }
 
-    public void updateVoiceLevel(int level) {
-        if (mDialog != null && mDialog.isShowing()) {
-            int resId;
-            if(level == 1){
-                resId = mContext.getResources().getIdentifier("tb_voice1",
-                        "mipmap", mContext.getPackageName());
-            }else if(level == 2){
-                resId = mContext.getResources().getIdentifier("tb_voice2",
-                        "mipmap", mContext.getPackageName());
-            }else{
-                resId = mContext.getResources().getIdentifier("tb_voice3",
-                        "mipmap", mContext.getPackageName());
-            }
-            mVoice.setImageResource(resId);
-        }
-    }
-
-    public void updateRecordTime(float time) {
-        if (mDialog != null && mDialog.isShowing()) {
-            mLable.setText(decimalFormat.format(time) + "S");
-        }
-    }
 
     public void updateVolumnTime(float vol, float time) {
         if (mDialog != null && mDialog.isShowing()) {
             mLable.setText(decimalFormat.format(time) + "S");
+            mVoice.addData(vol);
         }
     }
 }

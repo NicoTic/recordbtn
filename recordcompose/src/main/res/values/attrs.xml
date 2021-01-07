@@ -4,4 +4,13 @@
         <attr name="maxRecordsCount" format="integer" />
         <attr name="maxRecordTimes" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="waveColor" format="color"/>
+        <attr name="baselineColor" format="color"/>
+        <attr name="maxValue" format="integer"/>
+        <attr name="waveStokeWidth" format="dimension"/>
+        <attr name="invalidateTime" format="integer"/>
+        <attr name="space" format="dimension"/>
+    </declare-styleable>
 </resources>
